@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Login.scss';
 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -25,12 +26,20 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Iniciar sesión</h2>
-      <input type="email" name="email" placeholder="Correo" onChange={handleChange} required />
-      <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
-      <button type="submit">Entrar</button>
-    </form>
+      <div className="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form>
+          <label>Email</label>
+          <input type="email" placeholder="usuario@example.com" />
+
+          <label>Contraseña</label>
+          <input type="password" placeholder="********" />
+
+          <button type="submit">Entrar</button>
+        </form>
+        <div className="forgot-password">¿Olvidaste tu contraseña?</div>
+      </div>
+
   );
 };
 

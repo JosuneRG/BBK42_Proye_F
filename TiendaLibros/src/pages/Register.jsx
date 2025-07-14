@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Register.scss';
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -21,13 +22,26 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registro</h2>
-      <input type="text" name="name" placeholder="Nombre" onChange={handleChange} required />
-      <input type="email" name="email" placeholder="Correo" onChange={handleChange} required />
-      <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} required />
+    <div className="register-container">
+    <h2>Crear Cuenta</h2>
+    <form>
+      <label>Nombre completo</label>
+      <input type="text" placeholder="Tu nombre" />
+
+      <label>Email</label>
+      <input type="email" placeholder="usuario@example.com" />
+
+      <label>Contraseña</label>
+      <input type="password" placeholder="********" />
+
+      <label>Confirmar contraseña</label>
+      <input type="password" placeholder="********" />
+
       <button type="submit">Registrarse</button>
     </form>
+    <div className="login-link">¿Ya tienes cuenta? Inicia sesión</div>
+    </div>
+
   );
 };
 

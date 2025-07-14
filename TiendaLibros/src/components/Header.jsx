@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "../styles/global.scss"; 
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import '../styles/Header.scss'; // o la ruta correcta
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
