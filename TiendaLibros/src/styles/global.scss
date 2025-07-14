@@ -1,0 +1,22 @@
+@use './variables' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: $background;
+  color: $text;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+button {
+  cursor: pointer;
+}
